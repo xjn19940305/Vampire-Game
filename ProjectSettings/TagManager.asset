@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - spawnObject
+  - IncreaseHP
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -27,9 +27,9 @@ namespace Timers
 #endif
                 Destroy(this);
             }
-
-            DontDestroyOnLoad(this);
-            DontDestroyOnLoad(gameObject);
+            //这里需要注释 不然重新加载场景就有问题
+            //DontDestroyOnLoad(this);
+            //DontDestroyOnLoad(gameObject);
             m_instance = this;
         }
 

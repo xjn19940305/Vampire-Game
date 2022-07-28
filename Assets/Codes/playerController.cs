@@ -4,23 +4,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.InputSystem.InputAction;
-
+/// <summary>
+/// ÓÃ»§¿ØÖÆÆ÷
+/// </summary>
 public class playerController : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
     private Vector2 _inputDirction;
     [SerializeField] private float speed;
-
     public void Move(CallbackContext context)
     {
         _inputDirction = context.ReadValue<Vector2>();
         //transform.Translate(inputDir);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        print(collision.name);
-    }
+
 
     public void FixedUpdate()
     {

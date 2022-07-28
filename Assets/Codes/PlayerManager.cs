@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-
+/// <summary>
+/// 控制中心
+/// </summary>
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private Transform playerTransform;
