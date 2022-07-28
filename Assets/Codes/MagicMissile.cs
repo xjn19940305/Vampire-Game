@@ -8,6 +8,7 @@ public class MagicMissile : MonoBehaviour
 {
     [SerializeField] private MissileCreator missileCreator;
     [SerializeField] protected UnityEvent magicMissileEvent;
+    [SerializeField] public float Times;
     private void LaunchMissile()
     {
         missileCreator.Create();
@@ -15,6 +16,6 @@ public class MagicMissile : MonoBehaviour
     }
     private void Awake()
     {
-        TimersManager.SetLoopableTimer(this, 2, LaunchMissile);
+        TimersManager.SetLoopableTimer(this, Times, LaunchMissile);
     }
 }

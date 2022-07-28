@@ -2,6 +2,7 @@ using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 /// <summary>
 /// 敌人控制器
 /// </summary>
@@ -10,9 +11,10 @@ public class EnemyController : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private PlayerManager playerManager;
+    [SerializeField] private UnityEvent<Vector2> enemyMoveEvent;
     public void Awake()
     {
-        playerManager = GameObject.Find("Manager").GetComponent<PlayerManager>();
+        playerManager = GameObject.Find("Manager").GetComponent<PlayerManager>(); 
     }
     public void FixedUpdate()
     {
@@ -25,10 +27,12 @@ public class EnemyController : MonoBehaviour
         direction.Normalize();
         //获取需要移动的量
         var targetPosition = position + direction;
+
         //if (position == playerPosition)
         //    print("怪物抓到玩家了!");
-        if (position == targetPosition) return;
+        if (position == targetPosition) return;       
         rb.DOMove(targetPosition, speed).SetSpeedBased();
+        enemyMoveEvent.Invoke(direction);
 
     }
 }
