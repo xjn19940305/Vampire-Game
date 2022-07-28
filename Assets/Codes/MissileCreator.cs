@@ -8,6 +8,7 @@ public class MissileCreator : MonoBehaviour
     [SerializeField] private Transform PlayerTransform;
     public void Create()
     {
-        Instantiate(missile, PlayerTransform.position, Quaternion.identity);
+        //print("ÃæÏò:" + PlayerTransform.rotation);
+        Instantiate(missile, new Vector3(PlayerTransform.position.x, PlayerTransform.position.y - 1.5f, PlayerTransform.position.z), Quaternion.identity);
     }
 }

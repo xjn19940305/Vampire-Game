@@ -7,6 +7,7 @@ public class PlayerAnimationController : MonoBehaviour
 {
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    //[SerializeField] private Transform playerTransform;
     [SerializeField] private string walkState;
     [SerializeField] private string idleState;
     [SerializeField] private string attackState;
@@ -22,13 +23,16 @@ public class PlayerAnimationController : MonoBehaviour
         {
             animator.Play(walkState);
         }
+        print("dir:" + direction.x.ToString());
         if (direction.x > 0)
         {
+            //playerTransform.rotation = Quaternion.Euler(0, 0, 0);
             spriteRenderer.flipX = false;
         }
-        else
+        else if (direction.x < 0)
         {
             spriteRenderer.flipX = true;
+            //playerTransform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }
 
