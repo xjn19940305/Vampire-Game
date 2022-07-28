@@ -10,7 +10,7 @@ using UnityEngine.Events;
 public class Attack : MonoBehaviour
 {
     [SerializeField] private string target;
-    [SerializeField] private UnityEvent attackEvent;
+    [SerializeField] private UnityEvent attackEvent;    
     private bool _canAttack = true;
     private void OnTriggerEnter2D(Collider2D collision)
     {
