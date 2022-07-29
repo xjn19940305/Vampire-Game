@@ -22,16 +22,17 @@ public class PlayerAnimationController : MonoBehaviour
         else
         {
             animator.Play(walkState);
-        }
-        print("dir:" + direction.x.ToString());
+        }        
         if (direction.x > 0)
         {
             //playerTransform.rotation = Quaternion.Euler(0, 0, 0);
             spriteRenderer.flipX = false;
+            //transform.rotation = Quaternion.Euler(0, 0, 0);
         }
         else if (direction.x < 0)
         {
             spriteRenderer.flipX = true;
+            //transform.rotation = Quaternion.Euler(0, 180, 0);
             //playerTransform.rotation = Quaternion.Euler(0, 180, 0);
         }
     }

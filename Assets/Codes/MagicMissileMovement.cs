@@ -10,6 +10,7 @@ public class MagicMissileMovement : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private Rigidbody2D rb;
     private Vector2 direction;
+    private playerController playerController;
     private GameObject LocateEnemy()
     {
         var Collider2dList = new Collider2D[5];
@@ -25,7 +26,9 @@ public class MagicMissileMovement : MonoBehaviour
     }
     private Vector2 MoveDirection(Transform target)
     {
-        var direction = new Vector2(1, 0);
+        playerController = GameObject.Find("Player").GetComponent<playerController>();
+        //通过面向判断子弹飞行的方向
+        var direction = new Vector2(playerController.faceDirection, 0);
         if (target != null)
         {
             direction = (Vector2)(target.position - transform.position);
@@ -44,6 +47,7 @@ public class MagicMissileMovement : MonoBehaviour
     private void FixedUpdate()
     {
         var targetPosition = (Vector2)transform.position + direction;
+        //print(targetPosition);
         rb.DOMove(targetPosition, speed).SetSpeedBased();
 
     }

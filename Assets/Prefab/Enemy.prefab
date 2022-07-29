@@ -355,6 +355,7 @@ GameObject:
   - component: {fileID: 1400052736232386014}
   - component: {fileID: 1400052736232386012}
   - component: {fileID: 6101431929666442785}
+  - component: {fileID: 3306279635630180388}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -518,7 +519,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3306279635630180388}
+        m_TargetAssemblyTypeName: ScoreManagement, Assembly-CSharp
+        m_MethodName: Increase
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3306279635630180388}
+        m_TargetAssemblyTypeName: ScoreManagement, Assembly-CSharp
+        m_MethodName: UpdateUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!61 &6101431929666442785
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -545,6 +570,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9, y: 1.8}
   m_EdgeRadius: 0
+--- !u!114 &3306279635630180388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400052736232385990}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1177e7a100aa6ff42b754e449db8323f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1400052737054624530
 GameObject:
   m_ObjectHideFlags: 0

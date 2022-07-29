@@ -14,6 +14,12 @@ public class Health : MonoBehaviour
     {
         get { return health; }
     }
+
+    public void SetHealth(int health)
+    {
+        this.health = health;
+    }
+
     public void DecreaseHealth(int amount)
     {
         health -= amount;
